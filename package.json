@@ -1,17 +1,37 @@
 {
   "name": "wov-tapo",
   "version": "0.0.1",
+  "type": "module",
   "description": "Synchronizes Wolesvilles with TP-Link Tapo light strip",
   "scripts": {
-    "start": "node src/index.mjs",
+    "dev": "vite",
+    "build": "tsc && vite build && cp manifest.json dist",
     "format": "prettier --cache --write .",
-    "lint": "eslint --cache --fix ."
+    "lint": "eslint --cache --fix . --report-unused-disable-directives --max-warnings 0"
   },
   "author": "Pihkaal <hello@pihkaal.me> (https://pihkaal.me)",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
-    "@eslint/js": "^9.4.0",
-    "eslint": "^9.4.0",
-    "globals": "^15.3.0"
+    "@types/eslint": "^8.56.10",
+    "autoprefixer": "^10.4.19",
+    "globals": "^15.3.0",
+    "postcss": "^8.4.38",
+    "sass": "^1.77.4",
+    "tailwindcss": "^3.4.3",
+    "typescript": "^5.2.2",
+    "vite": "^5.2.0",
+    "eslint": "^8.57.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.6",
+    "@types/react": "^18.2.66",
+    "@types/react-dom": "^18.2.22",
+    "@typescript-eslint/eslint-plugin": "^7.2.0",
+    "@typescript-eslint/parser": "^7.2.0",
+    "@vitejs/plugin-react-swc": "^3.5.0"
+  },
+  "dependencies": {
+    "tp-link-tapo-connect": "^2.0.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
 }
