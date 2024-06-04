@@ -1,0 +1,17 @@
+{
+  "name": "wov-tapo",
+  "version": "0.0.1",
+  "description": "Synchronizes Wolesvilles with TP-Link Tapo light strip",
+  "scripts": {
+    "start": "node src/index.mjs",
+    "format": "prettier --cache --write .",
+    "lint": "eslint --cache --fix ."
+  },
+  "author": "Pihkaal <hello@pihkaal.me> (https://pihkaal.me)",
+  "license": "ISC",
+  "devDependencies": {
+    "@eslint/js": "^9.4.0",
+    "eslint": "^9.4.0",
+    "globals": "^15.3.0"
+  }
+}
