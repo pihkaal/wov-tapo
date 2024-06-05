@@ -1,0 +1,10 @@
+[Unit]
+Description=Tapo Rest API
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/tapo-rest --devices-config-path ~/.config/tapo-rest/config.json --port 6670 --auth-password AUTH_PASSWORD
+Restart=on-failure
+
+[Install]
+WantedBy=default.target

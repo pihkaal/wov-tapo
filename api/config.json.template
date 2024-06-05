@@ -1,0 +1,13 @@
+{
+  "account": {
+    "username": "TAPO_USERNAME",
+    "password": "TAPO_PASSWORD"
+  },
+  "devices": [
+    {
+      "name": "DEVICE_NAME",
+      "device_type": "DEVICE_TYPE",
+      "ip_addr": "DEVICE_IP"
+    }
+  ]
+}
