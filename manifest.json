@@ -3,9 +3,6 @@
   "name": "Wolvesville Tapo Connect",
   "description": "Synchronizes Wolesvilles with TP-Link Tapo light strip.",
   "version": "0.0.1",
-  "action": {
-    "default_popup": "index.html"
-  },
   "content_scripts": [
     {
       "matches": ["https://www.wolvesville.com/*"],
