@@ -23,7 +23,9 @@ popd
 
 echo "> Configure"
 
-if [ ! -f ~/.config/tapo-rest/config.json ]; then
+config_path="$HOME/.config/tapo-rest/config.json"
+
+if [ ! -f "$config_path" ]; then
   mkdir -p ~/.config/tapo-rest
 
   echo "Tapo username: "
@@ -48,7 +50,7 @@ if [ ! -f ~/.config/tapo-rest/config.json ]; then
   config_template="${config_template/DEVICE_TYPE/${device_type}}"
   config_template="${config_template/DEVICE_IP/${device_ip}}"
 
-  echo "$config_template" > ~/.config/tapo-rest/config.json
+  echo "$config_template" > $config_path 
 fi
 
 # Setup deamon
@@ -58,6 +60,7 @@ echo "> Service setup"
 auth_password=$(openssl rand -base64 32)
 
 service_template=$(cat ./tapo_rest.service.template)
+service_template="${service_template/CONFIG_PATH/${config_path}}"
 service_template="${service_template/AUTH_PASSWORD/${auth_password}}"
 
 echo "$service_template" | sudo tee /etc/systemd/system/tapo_rest.service > /dev/null
